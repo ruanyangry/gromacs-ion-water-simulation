@@ -72,7 +72,7 @@ gmxndx.py: Generated GROMACS .ndx file.
 
 The analysis codes can automatically obtain the radius of the ions first and second hydration layer.  
 
-    python ry.py -gro "nvtnemd.gro" -trr "nvtnemd.trr" -tpr "nvtnemd.tpr" -cationname "NA" -anionname "CL"  
+    python ionwateranalysis-v3.py -gro "nvtnemd.gro" -trr "nvtnemd.trr" -tpr "nvtnemd.tpr" -cationname "NA" -anionname "CL"  
 
     parser=argparse.ArgumentParser(description="Analysis ion water systems.\
     Using MDAnalysis library.")
