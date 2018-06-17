@@ -3,7 +3,7 @@ This repository contained  python code used to do ion water system simulation.
 
 # Authors:  
 
-Ruan Yang
+Ruan Yang  
 Email: ruanyang_njut@163.com  
 
 Required library:  
