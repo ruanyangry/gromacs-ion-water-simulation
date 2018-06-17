@@ -55,7 +55,8 @@ MDAnalysis； https://github.com/MDAnalysis/mdanalysis
     
     Gmxmdp.py: Generated GROMACS .mdp file. Simulation process: EM---NVTEquilibrium---NPTEquilibrium---NVT(NPT) Production run---Standmdp. reference: https://github.com/ruanyangry/gromacs-lammps-process-simulation.  
     
-    FF.py: Generated GROMACS .top file and ionwater.sh.
+    FF.py: Generated GROMACS .top file and ionwater.sh.  
+    gmxndx.py: Generated GROMACS .ndx file.
 
 # Analysis methods in ionwateranalysis-v3.py:  
 
