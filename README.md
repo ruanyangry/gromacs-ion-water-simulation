@@ -1,7 +1,7 @@
 # gromacs-ion-water-simulation
 This repository contained  python code used to do ion water system simulation.
 
-Authors:  
+# Authors:  
 
 Ruan Yang
 Email: ruanyang_njut@163.com  
@@ -10,7 +10,7 @@ Required library:
 
 MDAnalysis； https://github.com/MDAnalysis/mdanalysis  
 
-Uage:  
+# Uage:  
 
 python ry.py -gro "nvtnemd.gro" -trr "nvtnemd.trr" -tpr "nvtnemd.tpr" -cationname "NA" -anionname "CL"  
 
@@ -31,7 +31,7 @@ python ry.py -gro "nvtnemd.gro" -trr "nvtnemd.trr" -tpr "nvtnemd.tpr" -cationnam
     
 References: https://www.mdanalysis.org/docs/documentation_pages/analysis/waterdynamics.html  
 
-Analysis methods in ionwateranalysis-v3.py:  
+# Analysis methods in ionwateranalysis-v3.py:  
 
 1. Radial distribution functions for ow-ow、ow-hw、cation-ow and anion-ow. 
 2. The coordination numbers for the first and second shells of ions.  
@@ -43,12 +43,12 @@ Analysis methods in ionwateranalysis-v3.py:
 
 The analysis codes can automatically obtain the radius of the ions first and second hydration layer.  
 
-Citation:  
+# Citation:  
 These publications associated with this code is found here:
 
 1. Molecular Dynamics Study of Mg2+/Li+ Separation via Biomimetic Graphene-Based Nanopores: The Role of Dehydration in Second Shell. DOI: 10.1021/acs.langmuir.6b03001.  
 
-2. 
+2. Mg2+-Channel-Inspired Nanopores for Mg2+/Li+ Separation: The Effect of Coordination on the Ionic Hydration Microstructure. DOI: 10.1021/acs.langmuir.7b01249.  
 
 
 
