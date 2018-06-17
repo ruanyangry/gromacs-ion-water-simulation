@@ -10,7 +10,7 @@ Required library:
 
 MDAnalysis； https://github.com/MDAnalysis/mdanalysis  
 
-# Uage:  
+# Usage:  
     # _*_ coding:utf-8 _*_
 
     import Gmxmdp as GMP
