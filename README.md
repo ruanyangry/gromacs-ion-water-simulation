@@ -53,7 +53,7 @@ MDAnalysis； https://github.com/MDAnalysis/mdanalysis
     os.system("dos2unix ionwater.sh")
     os.system("qsub ionwater.sh")
     
-    Gmxmdp.py: Generated GROMACS .mdp file. Simulation process: EM---NVTEquilibrium---NPTEquilibrium---NVT(NPT) Production run---Standmdp
+    Gmxmdp.py: Generated GROMACS .mdp file. Simulation process: EM---NVTEquilibrium---NPTEquilibrium---NVT(NPT) Production run---Standmdp. reference: https://github.com/ruanyangry/gromacs-lammps-process-simulation.  
     
     FF.py: Generated GROMACS .top file and ionwater.sh.
 
