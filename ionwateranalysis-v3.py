@@ -260,6 +260,77 @@ plt.title("Ions Second hydration Number")
 plt.savefig("hydration-number.jpg",dpi=300)
 plt.clf()
 
+try:
+	plt.figure(1,figsize=(18,8))
+	pdf=collections.Counter(hn[:,1])
+	results=[]
+	for k,v in pdf.items():
+		results.append([k,v])
+	results=np.array(results)
+	plt.bar(results[:,0],results[:,1],width=0.35)
+	plt.xlabel("Hydration number")
+	plt.ylabel("Occurrence number")
+	averagehn=0.0
+	for i in range(len(results)-1):
+		averagehn += results[i+1,0]*results[i+1,1]
+	averagehn=averagehn/sum(results[1:,1])
+	plt.title("The average hydration number = %.4f"%(averagehn))
+	plt.savefig("HN-PDF-%s-First.jpg"%(cation[0]),dpi=300)
+	plt.clf()
+	
+	plt.figure(1,figsize=(18,8))
+	pdf=collections.Counter(hn[:,3])
+	results=[]
+	for k,v in pdf.items():
+		results.append([k,v])
+	results=np.array(results)
+	plt.bar(results[:,0],results[:,1],width=0.35)
+	plt.xlabel("Hydration number")
+	plt.ylabel("Occurrence number")
+	averagehn=0.0
+	for i in range(len(results)-1):
+		averagehn += results[i+1,0]*results[i+1,1]
+	averagehn=averagehn/sum(results[1:,1])
+	plt.title("The average hydration number = %.4f"%(averagehn))
+	plt.savefig("HN-PDF-%s-First.jpg"%(anion[0]),dpi=300)
+	plt.clf()	
+	
+	plt.figure(1,figsize=(18,8))
+	pdf=collections.Counter(hn[:,2])
+	results=[]
+	for k,v in pdf.items():
+		results.append([k,v])
+	results=np.array(results)
+	plt.bar(results[:,0],results[:,1],width=0.35)
+	plt.xlabel("Hydration number")
+	plt.ylabel("Occurrence number")
+	averagehn=0.0
+	for i in range(len(results)-1):
+		averagehn += results[i+1,0]*results[i+1,1]
+	averagehn=averagehn/sum(results[1:,1])
+	plt.title("The average hydration number = %.4f"%(averagehn))
+	plt.savefig("HN-PDF-%s-Second.jpg"%(cation[0]),dpi=300)
+	plt.clf()	
+	
+	plt.figure(1,figsize=(18,8))
+	pdf=collections.Counter(hn[:,4])
+	results=[]
+	for k,v in pdf.items():
+		results.append([k,v])
+	results=np.array(results)
+	plt.bar(results[:,0],results[:,1],width=0.35)
+	plt.xlabel("Hydration number")
+	plt.ylabel("Occurrence number")
+	averagehn=0.0
+	for i in range(len(results)-1):
+		averagehn += results[i+1,0]*results[i+1,1]
+	averagehn=averagehn/sum(results[1:,1])
+	plt.title("The average hydration number = %.4f"%(averagehn))
+	plt.savefig("HN-PDF-%s-Second.jpg"%(anion[0]),dpi=300)
+	plt.clf()
+except:
+	print("Hydration number pdf analysis plot error")
+	
 os.system("mv *.txt *.jpg Hydration-number")
 
 print("Hydration number analysis done")
