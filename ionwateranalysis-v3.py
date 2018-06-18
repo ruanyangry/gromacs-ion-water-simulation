@@ -227,14 +227,14 @@ hn=np.zeros([end,5])
 cationnumber=u.select_atoms("resname %s"%(cation[0])).n_atoms
 anionnumber=u.select_atoms("resname %s"%(anion[0])).n_atoms
 
-for frame in range(end):
-	hn[frame,0]=frame
+for ts in u.trajectory:
+	hn[ts.frame,0]=ts.frame
 	for i in range(len(sel)):
-		hn[frame,i+1]=u.select_atoms("%s"%(sel[i]),updating=True).n_atoms
-	hn[frame,1]=hn[frame,1]/cationnumber
-	hn[frame,2]=hn[frame,2]/cationnumber
-	hn[frame,3]=hn[frame,3]/anionnumber
-	hn[frame,4]=hn[frame,4]/anionnumber
+		hn[ts.frame,i+1]=u.select_atoms("%s"%(sel[i]),updating=True).n_atoms
+	hn[ts.frame,1]=hn[ts.frame,1]/cationnumber
+	hn[ts.frame,2]=hn[ts.frame,2]/cationnumber
+	hn[ts.frame,3]=hn[ts.frame,3]/anionnumber
+	hn[ts.frame,4]=hn[ts.frame,4]/anionnumber
 
 np.savetxt("hydration-number.txt",hn,fmt="%d %.4f %.4f %.4f %.4f")
 
