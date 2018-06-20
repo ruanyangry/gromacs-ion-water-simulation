@@ -64,8 +64,8 @@ end=u.trajectory.n_frames
 
 print("#------------------------------------------------------#")
 print("Start RDF analysis")
-os.system("mkdir rdf")
-os.system("cd rdf")
+os.system("mkdir RDF")
+os.system("cd RDF")
 
 ow=u.select_atoms("name OW")
 hw=u.select_atoms("name HW1 or name HW2")
@@ -150,7 +150,7 @@ plt.title("%s-ow rdf"%(anion[0]))
 plt.savefig("rdf.jpg",dpi=300)
 plt.clf()
 
-os.system("mv *.txt *.jpg rdf")
+os.system("mv *.txt *.jpg RDF")
 
 print("RDF analysis done")
 print("#------------------------------------------------------#")
@@ -168,7 +168,7 @@ around %.4f resname %s)"%(anion[2],anion[0],anion[1],anion[0]))
 
 print("#------------------------------------------------------#")
 print("Start Water mass density analysis")
-os.system("mkdir massdensity")
+os.system("mkdir Mass-Density")
 
 resid=int((u.select_atoms("resname SOL").n_atoms)/3)
 u=mda.Universe(TPR,TRR)
@@ -208,7 +208,7 @@ plt.legend(loc="best")
 plt.title("Water charge density along x y z axis")
 plt.savefig("Water-charge-density.jpg",dpi=300)
 
-os.system("mv *.ldens *.jpg massdensity")
+os.system("mv *.ldens *.jpg Mass-Density")
 plt.clf()
 
 print("Water mass density analysis done")
@@ -221,7 +221,7 @@ u=mda.Universe(GRO,TRR)
 
 print("#------------------------------------------------------#")
 print("Start Hydration number analysis")
-os.system("mkdir Hydration-number")
+os.system("mkdir Hydration-Number")
 
 hn=np.zeros([end,5])
 cationnumber=u.select_atoms("resname %s"%(cation[0])).n_atoms
@@ -331,7 +331,7 @@ try:
 except:
 	print("Hydration number pdf analysis plot error")
 	
-os.system("mv *.txt *.jpg Hydration-number")
+os.system("mv *.txt *.jpg Hydration-Number")
 
 print("Hydration number analysis done")
 print("#------------------------------------------------------#")
@@ -341,8 +341,7 @@ print("\n")
 
 print("#------------------------------------------------------#")
 print("Start hydrogen bond analysis")
-os.system("mkdir hydrogen-bond")
-os.system("cd hydrogen-bond")
+os.system("mkdir Hydrogen-Bond")
 
 sel=[]
 sel.append("same resid as (resname SOL and (around %.4f resname %s))"%(cation[1],cation[0]))
@@ -438,7 +437,7 @@ for i in range(0,len(sel),2):
 	except:
 		print("Hydrogen bond between first and second hydration plot error")
 
-os.system("mv *.txt *.jpg hydrogen-bond")
+os.system("mv *.txt *.jpg Hydrogen-Bond")
 
 print("Hydrogen bond analysis done")
 print("#------------------------------------------------------#")
@@ -448,8 +447,7 @@ print("\n")
 
 print("#------------------------------------------------------#")
 print("Start hydrogen bond lifetime in ions hydration shell analysis")
-os.system("mkdir hydrogenbond-lifetime")
-os.system("cd hydrogenbond-lifetime")
+os.system("mkdir Hydrogen-Bond-Lifetime")
 
 for i in range(len(sel)):
 	HBL_analysis=HBL(u,sel[i],sel[i],start,end,50)
@@ -528,7 +526,7 @@ for i in range(0,len(sel),2):
 	except:
 		print("Hydrogen bond left time between first and second hydration shell plot error")
 		
-os.system("mv *.txt *.jpg hydrogenbond-lifetime")
+os.system("mv *.txt *.jpg Hydrogen-Bond-Lifetime")
 
 print("Hydrogen bond lifetime in ions hydration shell analysis done")
 print("#------------------------------------------------------#")
@@ -539,7 +537,6 @@ print("\n")
 print("#------------------------------------------------------#")
 print("Start Water Orientation Relaxation analysis")
 os.system("mkdir Water-Orientation")
-os.system("cd Water-Orientation")
 
 for i in range(len(sel)):
 	WOR_analysis=WOR(u,sel[i],start,end,50)
@@ -595,8 +592,7 @@ print("\n")
 
 print("#------------------------------------------------------#")
 print("Start Water Angular Distribution analysis")
-os.system("mkdir Water-Angular")
-os.system("cd Water-Angular")
+os.system("mkdir Water-Angular-Distribution")
 
 bins=30
 
@@ -642,7 +638,7 @@ for i in range(len(sel)):
 	except:
 		print("Water Angular Distribution plot error")
 		
-os.system("mv *.txt *.jpg Water-Angular")
+os.system("mv *.txt *.jpg Water-Angular-Distribution")
 
 print("Water Angular Distribution analysis done")
 print("#------------------------------------------------------#")
@@ -652,8 +648,7 @@ print("\n")
 
 print("#------------------------------------------------------#")
 print("Start MSD analysis")
-os.system("mkdir msd")
-os.system("cd msd")
+os.system("mkdir MSD")
 
 msdsel=[]
 msdsel.append("name OW")
@@ -742,7 +737,7 @@ try:
 except:
 	print("msd plot error")
 		
-os.system("mv *.txt *.jpg msd")
+os.system("mv *.txt *.jpg MSD")
 
 print("MSD analysis done")
 print("#------------------------------------------------------#")
